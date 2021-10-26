@@ -1,0 +1,184 @@
+@import 'normalize.css';
+* {
+  box-sizing: border-box;
+}
+
+$form-inputs-color: #c4c4c4;
+@mixin input-width {
+  input {
+    width: 100%;
+    background-color: $form-inputs-color;
+    border: none;
+    &::placeholder {
+      color: black;
+    }
+  }
+}
+.form {
+  display: flex;
+  width: 400px;
+  height: 150px;
+  flex-direction: row;
+  background-color: lightgray;
+  padding: 5px;
+  flex-wrap: wrap;
+  &__alert {
+    width: 100%;
+    &--hidden {
+      display: none;
+    }
+    p {
+      margin: 0px auto;
+      display: grid;
+      text-align: center;
+    }
+  }
+  &__hidden-input {
+    display: none;
+  }
+  &__image {
+    background-color: $form-inputs-color;
+    flex-basis: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+  }
+  &__image-text {
+    &--hidden {
+      display: none;
+    }
+  }
+  &__fields {
+    padding-left: 10px;
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__title {
+    @include input-width;
+  }
+  &__url {
+    @include input-width;
+  }
+  &__text {
+    textarea {
+      resize: none;
+      width: 100%;
+      background-color: $form-inputs-color;
+      border: none;
+      &::placeholder {
+        color: black;
+      }
+    }
+  }
+  &__button {
+    align-self: flex-end;
+    button {
+      border: none;
+      background-color: $form-inputs-color;
+    }
+  }
+}
+.items-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  justify-items: center;
+  .item {
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 15px;
+    &--hidden {
+      // visibility: hidden;
+      display: none;
+    }
+    &__image {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+.load-more {
+  display: flex;
+  justify-content: center;
+  &__button {
+    border-radius: 8px;
+    background-color: lightgray;
+  }
+
+  &--hidden {
+    display: none;
+  }
+}
+section {
+  padding: 25px;
+}
+.loader {
+  background: rgba(0, 0, 0, 0.15);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  &--hidden {
+    display: none;
+  }
+
+  .load {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*change these sizes to fit into your project*/
+    width: 100px;
+    height: 100px;
+  }
+  .load hr {
+    border: 0;
+    margin: 0;
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    border-radius: 50%;
+    animation: spin 2s ease infinite;
+  }
+
+  .load :first-child {
+    background: #19a68c;
+    animation-delay: -1.5s;
+  }
+  .load :nth-child(2) {
+    background: #f63d3a;
+    animation-delay: -1s;
+  }
+  .load :nth-child(3) {
+    background: #fda543;
+    animation-delay: -0.5s;
+  }
+  .load :last-child {
+    background: #193b48;
+  }
+
+  @keyframes spin {
+    0%,
+    100% {
+      transform: translate(0);
+    }
+    25% {
+      transform: translate(160%);
+    }
+    50% {
+      transform: translate(160%, 160%);
+    }
+    75% {
+      transform: translate(0, 160%);
+    }
+  }
+}

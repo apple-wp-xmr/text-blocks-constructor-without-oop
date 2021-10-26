@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <script defer src="js/script.js"></script>
+    <section>
+      <form class="form" id="form">
+        <div id="form__alert" class="form__alert form__alert--hidden">
+          <p></p>
+        </div>
+        <div class="form__image" id="fileSelect">
+          <p class="form__image-text">Картинка</p>
+        </div>
+        <input
+          class="form__hidden-input"
+          type="file"
+          id="fileElem"
+          accept="iimage/jpg, image/png"
+          name="image-file"
+        />
+        <div class="form__fields">
+          <div class="form__title">
+            <input
+              type="text"
+              placeholder="Заголовок"
+              required
+              maxlength="20"
+              name="title"
+            />
+          </div>
+          <div class="form__url">
+            <input type="text" placeholder="Ссылка" required name="url" />
+          </div>
+          <div class="form__text">
+            <textarea
+              required
+              placeholder="Текст"
+              maxlength="250"
+              name="long-text"
+            ></textarea>
+          </div>
+          <div class="form__button">
+            <button action="submit">Создать</button>
+          </div>
+        </div>
+      </form>
+    </section>
+    <section>
+      <div class="items-list"></div>
+      <div class="load-more load-more--hidden">
+        <button class="load-more__button" id="load-more">Load More</button>
+      </div>
+    </section>
+    <div id="loader" class="loader loader--hidden">
+      <div class="load">
+        <hr />
+        <hr />
+        <hr />
+        <hr />
+      </div>
+    </div>
+  </body>
+</html>

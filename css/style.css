@@ -1,0 +1,179 @@
+@import 'normalize.css';
+* {
+  box-sizing: border-box;
+}
+
+.form {
+  display: flex;
+  width: 400px;
+  height: 150px;
+  flex-direction: row;
+  background-color: lightgray;
+  padding: 5px;
+  flex-wrap: wrap;
+}
+.form__alert {
+  width: 100%;
+}
+.form__alert--hidden {
+  display: none;
+}
+.form__alert p {
+  margin: 0px auto;
+  display: grid;
+  text-align: center;
+}
+.form__hidden-input {
+  display: none;
+}
+.form__image {
+  background-color: #c4c4c4;
+  flex-basis: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+}
+.form__image-text--hidden {
+  display: none;
+}
+.form__fields {
+  padding-left: 10px;
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.form__title input {
+  width: 100%;
+  background-color: #c4c4c4;
+  border: none;
+}
+.form__title input::placeholder {
+  color: black;
+}
+.form__url input {
+  width: 100%;
+  background-color: #c4c4c4;
+  border: none;
+}
+.form__url input::placeholder {
+  color: black;
+}
+.form__text textarea {
+  resize: none;
+  width: 100%;
+  background-color: #c4c4c4;
+  border: none;
+}
+.form__text textarea::placeholder {
+  color: black;
+}
+.form__button {
+  align-self: flex-end;
+}
+.form__button button {
+  border: none;
+  background-color: #c4c4c4;
+}
+
+.items-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  justify-items: center;
+}
+.items-list .item {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 15px;
+}
+.items-list .item--hidden {
+  display: none;
+}
+.items-list .item__image {
+  width: 150px;
+  height: 150px;
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+}
+.load-more__button {
+  border-radius: 8px;
+  background-color: lightgray;
+}
+.load-more--hidden {
+  display: none;
+}
+
+section {
+  padding: 25px;
+}
+
+.loader {
+  background: rgba(0, 0, 0, 0.15);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.loader--hidden {
+  display: none;
+}
+.loader .load {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*change these sizes to fit into your project*/
+  width: 100px;
+  height: 100px;
+}
+.loader .load hr {
+  border: 0;
+  margin: 0;
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  border-radius: 50%;
+  animation: spin 2s ease infinite;
+}
+.loader .load :first-child {
+  background: #19a68c;
+  animation-delay: -1.5s;
+}
+.loader .load :nth-child(2) {
+  background: #f63d3a;
+  animation-delay: -1s;
+}
+.loader .load :nth-child(3) {
+  background: #fda543;
+  animation-delay: -0.5s;
+}
+.loader .load :last-child {
+  background: #193b48;
+}
+@keyframes spin {
+  0%, 100% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(160%);
+  }
+  50% {
+    transform: translate(160%, 160%);
+  }
+  75% {
+    transform: translate(0, 160%);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
