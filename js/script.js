@@ -67,7 +67,9 @@ function renderItems({ image, title, url, longText }) {
   element.classList.add('item');
   element.innerHTML = `<img  class="item__image" src="${image}" alt="">
   <h4 class="item__title">${title}</h4>
-  <p class="item__text">${longText}</p>`;
+  <p class="item__text">${longText}</p>
+  <a class="item__link"
+  href="${url}"></a>`;
   itemsList.appendChild(element);
 }
 function checkItemsDisplay() {
@@ -90,7 +92,7 @@ form.addEventListener('submit', function (e) {
   const title = inputs['title'].value;
   const url = inputs['url'].value;
   const longText = inputs['long-text'].value;
-  const cyrillicReg = new RegExp('^[А-Яа-я]+$');
+  const cyrillicReg = new RegExp('^[А-Яа-я ]+$');
   if (!image) {
     formAlert('Выберите изображение');
     return;
